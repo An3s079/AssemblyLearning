@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <MASM Include="AddTwo.asm">
+    <MASM Include="AddTwo_86x.asm">
       <Filter>Source Files</Filter>
     </MASM>
   </ItemGroup>

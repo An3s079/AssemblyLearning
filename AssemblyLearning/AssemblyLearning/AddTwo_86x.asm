@@ -5,14 +5,21 @@
 ExitProcess PROTO, dwExitCode:DWORD
 
 .data
+firstVal DWORD 5
+secondVal DWORD 12
 sum DWORD 0
+
+myString BYTE "Test String"
+stringSize EQU ($ - myString)
+myString_Length WORD stringSize
 
 .code
 main PROC
-	mov eax, 5
-	add eax, 6
+	mov eax, firstVal
+	add eax, secondVal
+
 	mov sum, eax
-	
+
 	invoke ExitProcess, 0
 main ENDP
 end main

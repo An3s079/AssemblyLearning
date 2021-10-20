@@ -1,0 +1,83 @@
+Microsoft (R) Macro Assembler Version 14.28.29336.0	    10/19/21 22:53:14
+AddTwo_86x.asm						     Page 1 - 1
+
+
+				;AddTwo.asm - adds two 32-bit integers
+				.386
+				.model flat,stdcall
+				.stack 4096
+				ExitProcess PROTO, dwExitCode:DWORD
+
+ 00000000			.data
+ 00000000 20002000		firstVal DWORD 20002000h
+ 00000004 11111111		secondVal DWORD 11111111h
+ 00000008 22222222		thirdVal DWORD 22222222h
+ 0000000C 00000000		sum DWORD 0
+
+ 00000010 42 61 6C 6C 73	myString BYTE "Balls Wide"
+	   20 57 69 64 65
+ 0000001A = 0000000A		stringSize EQU ($ - myString)
+ 0000001A 000A			myString_Length WORD stringSize
+
+ 0000001C 0064			awesome SWORD 100
+
+ 00000000			.code
+ 00000000			main PROC
+ 00000000  A1 00000000 R		mov eax, firstVal
+ 00000005  03 05 00000004 R		add eax, secondVal
+ 0000000B  03 05 00000008 R		add eax, thirdVal
+ 00000011  A3 0000000C R		mov sum, eax
+					
+					;mov myString_Length, stringSize
+
+					invoke ExitProcess, 0
+ 0000001D			main ENDP
+				end main
+Microsoft (R) Macro Assembler Version 14.28.29336.0	    10/19/21 22:53:14
+AddTwo_86x.asm						     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+FLAT . . . . . . . . . . . . . .	GROUP
+STACK  . . . . . . . . . . . . .	32 Bit	 00001000 DWord	  Stack	  'STACK'	 
+_DATA  . . . . . . . . . . . . .	32 Bit	 0000001E DWord	  Public  'DATA'	
+_TEXT  . . . . . . . . . . . . .	32 Bit	 0000001D DWord	  Public  'CODE'	
+
+
+Procedures, parameters, and locals:
+
+                N a m e                 Type     Value    Attr
+
+ExitProcess  . . . . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External STDCALL
+main . . . . . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 0000001D Public STDCALL
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+@CodeSize  . . . . . . . . . . .	Number	 00000000h   
+@DataSize  . . . . . . . . . . .	Number	 00000000h   
+@Interface . . . . . . . . . . .	Number	 00000003h   
+@Model . . . . . . . . . . . . .	Number	 00000007h   
+@code  . . . . . . . . . . . . .	Text   	 _TEXT
+@data  . . . . . . . . . . . . .	Text   	 FLAT
+@fardata?  . . . . . . . . . . .	Text   	 FLAT
+@fardata . . . . . . . . . . . .	Text   	 FLAT
+@stack . . . . . . . . . . . . .	Text   	 FLAT
+awesome  . . . . . . . . . . . .	Word	 0000001C _DATA	
+firstVal . . . . . . . . . . . .	DWord	 00000000 _DATA	
+myString_Length  . . . . . . . .	Word	 0000001A _DATA	
+myString . . . . . . . . . . . .	Byte	 00000010 _DATA	
+secondVal  . . . . . . . . . . .	DWord	 00000004 _DATA	
+stringSize . . . . . . . . . . .	Number	 0000000Ah   
+sum  . . . . . . . . . . . . . .	DWord	 0000000C _DATA	
+thirdVal . . . . . . . . . . . .	DWord	 00000008 _DATA	
+
+	   0 Warnings
+	   0 Errors
