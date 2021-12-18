@@ -1,2 +1,3 @@
 ﻿  Assembling AddTwo_64x.asm...
-  AssemblyLearning.vcxproj -> C:\Users\Andries\Documents\GitHub\AssemblyLearning\AssemblyLearning\x64\Debug\AssemblyLearning.exe
+AddTwo_64x.asm(13): error A2070: invalid instruction operands
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\BuildCustomizations\masm.targets(70,5): error MSB3721: The command "ml64.exe /c /nologo /Zi /Fo"x64\Debug\AddTwo_64x.obj" /W3 /errorReport:prompt  /TaAddTwo_64x.asm" exited with code 1.
